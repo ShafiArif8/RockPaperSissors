@@ -2,18 +2,20 @@ function math(x) {
     return Math.floor(Math.random() * x)
 }
 let div = document.getElementById('div');
-let  wins = document.getElementById('score1')
+let wins = document.getElementById('score1')
 let loses = document.getElementById('score2')
 let draw = document.getElementById('score3')
 let myarry = ["Rock", "Paper", "Sissors"];
 let pc
 let player
 let scorestrfy
-let score ={
+let score = {
     wins: 0,
     loses: 0,
     Draw: 0,
 }
+let check
+
 //score[0] = win score[1] = loose score[2] = draw
 // console.log(myarry[math(3)]);
 //done 
@@ -43,7 +45,7 @@ function output() {
         div.innerHTML = `<h1>you:${player}</h1>
         <h1>pc: ${pc}</h1>
         <h1>Draw</h1>`
-        score.Draw=++score.Draw
+        score.Draw = ++score.Draw
         draw.innerHTML = `Draw: ${score.Draw}`
 
     }
@@ -53,7 +55,7 @@ function output() {
         div.innerHTML = `<h1>you:${player}</h1>
         <h1>pc: ${pc}</h1>
         <h1>wins</h1>`
-        score.wins=++score.wins
+        score.wins = ++score.wins
         wins.innerHTML = `wins: ${score.wins}`
 
     }
@@ -63,7 +65,7 @@ function output() {
         div.innerHTML = `<h1>you:${player}</h1>
         <h1>pc: ${pc}</h1>
         <h1>loses</h1>`
-        score.loses=++score.loses
+        score.loses = ++score.loses
         loses.innerHTML = `Loses: ${score.loses}`
 
     }
@@ -73,8 +75,8 @@ function output() {
         console.log("you won");
         div.innerHTML = `<h1>you:${player}</h1>
         <h1>pc: ${pc}</h1>
-        <h1>wins</h1>`
-        score.wins=++score.wins
+        <h1>losses</h1>`
+        score.wins = ++score.wins
         wins.innerHTML = `wins: ${score.wins}`
 
     }
@@ -84,10 +86,10 @@ function output() {
         div.innerHTML = `<h1>you:${player}</h1>
         <h1>pc: ${pc}</h1>
         <h1>loses</h1>`
-        score.loses=++score.loses
+        score.loses = ++score.loses
         loses.innerHTML = `Loses: ${score.loses}`
-        
-        
+
+
 
     }
     //pc sissors 1
@@ -95,11 +97,11 @@ function output() {
         console.log("i won");
         div.innerHTML = `<h1>you:${player}</h1>
         <h1>pc: ${pc}</h1>
-        <h1>loses</h1>`
-        score.loses=++score.loses
+        <h1>won</h1>`
+        score.loses = ++score.loses
         loses.innerHTML = `Loses: ${score.loses}`
-        
-        
+
+
 
     }
 
@@ -107,8 +109,8 @@ function output() {
         console.log("you won");
         div.innerHTML = `<h1>you:${player}</h1>
         <h1>pc: ${pc}</h1>
-        <h1>wins</h1>`
-        score.wins=++score.wins
+        <h1>loses</h1>`
+        score.wins = ++score.wins
         wins.innerHTML = `wins: ${score.wins}`
 
     }
@@ -117,8 +119,8 @@ function output() {
         console.log("you won");
         div.innerHTML = `<h1>you:${player}</h1>
         <h1>pc: ${pc}</h1>
-        <h1>wins</h1>`
-        score.wins=++score.wins
+        <h1>loses</h1>`
+        score.wins = ++score.wins
         wins.innerHTML = `wins: ${score.wins}`
 
     }
@@ -127,11 +129,11 @@ function output() {
         console.log("i won");
         div.innerHTML = `<h1>you:${player}</h1>
         <h1>pc: ${pc}</h1>
-        <h1>loses</h1>`
-        score.loses=++score.loses
+        <h1>won</h1>`
+        score.loses = ++score.loses
         loses.innerHTML = `Loses: ${score.loses}`
-        
-        
+
+
 
     }
     //pc paper 1
@@ -140,9 +142,9 @@ function output() {
         div.innerHTML = `<h1>you:${player}</h1>
         <h1>pc: ${pc}</h1>
         <h1>loses</h1>`
-        score.loses=++score.loses
+        score.loses = ++score.loses
         loses.innerHTML = `Loses: ${score.loses}`
-        
+
 
     }
 
@@ -150,8 +152,8 @@ function output() {
         console.log("you won");
         div.innerHTML = `<h1>you:${player}</h1>
         <h1>pc: ${pc}</h1>
-        <h1>wins</h1>`
-        score.wins=++score.wins
+        <h1>won</h1>`
+        score.wins = ++score.wins
         wins.innerHTML = `wins: ${score.wins}`
 
     }
@@ -160,10 +162,10 @@ function output() {
         console.log("you won");
         div.innerHTML = `<h1>you:${player}</h1>
         <h1>pc: ${pc}</h1>
-        <h1>wins</h1>`
-        score.wins=++score.wins
+        <h1>won</h1>`
+        score.wins = ++score.wins
         wins.innerHTML = `wins: ${score.wins}`
-        
+
 
     }
 
@@ -172,7 +174,7 @@ function output() {
         div.innerHTML = `<h1>you:${player}</h1>
         <h1>pc: ${pc}</h1>
         <h1>loses</h1>`
-        score.loses=++score.loses
+        score.loses = ++score.loses
         loses.innerHTML = `loses: ${score.loses}`
 
     }
@@ -180,9 +182,9 @@ function output() {
 
 }
 
-let parsed =JSON.parse(localStorage.getItem("score"));
-wins.innerHTML = `wins: ${parsed.wins}`
-loses.innerHTML = `loses: ${parsed.loses}`
-draw.innerHTML = `Draw: ${parsed.Draw}`
+score = JSON.parse(localStorage.getItem("score"));
+wins.innerHTML = `wins: ${score.wins}`
+loses.innerHTML = `loses: ${score.loses}`
+draw.innerHTML = `Draw: ${score.Draw}`
 
 
